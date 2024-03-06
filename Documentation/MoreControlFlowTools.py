@@ -28,3 +28,17 @@ print(list(range(-10, -100, -30)))
 a = ['Mary', 'had', 'a', 'little', 'lamb']
 for i in range(len(a)):
     print(i, a[i])
+
+
+# 4.break和continue
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            break
+    else:
+        print(n, 'is a prime number')
+
+
+# 5.pass
+for n in range(2, 10):
+    pass
