@@ -99,3 +99,23 @@ def ask_ok(prompt, retries=4, reminder='Please try again!'):
 
 
 ask_ok('Please enter')
+# 关键字参数
+ask_ok('Please enter', reminder='again')
+
+
+# 特殊参数
+def cheeseshop(kind, *arguments, **keywords):
+    print("-- Do you have any", kind, "?")
+    print("-- I'm sorry, we're all out of", kind)
+    for arg in arguments:
+        print(arg)
+    print("-" * 40)
+    for kw in keywords:
+        print(kw, ":", keywords[kw])
+
+
+cheeseshop("Limburger", "It's very runny, sir.",
+           "It's really very, VERY runny, sir.",
+           shopkeeper="Michael Palin",
+           client="John Cleese",
+           sketch="Cheese Shop Sketch")
