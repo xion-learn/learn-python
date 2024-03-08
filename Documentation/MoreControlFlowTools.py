@@ -70,3 +70,32 @@ match color:
         print("Grass is green")
     case Color.BLUE:
         print("I'm feeling the blues :(")
+
+
+# 7.定义函数
+def fib(end_index):
+    """打印斐波那契数列"""
+    a_num, b_num = 0, 1
+    while a_num < end_index:
+        print(a_num, end=' ')
+        a_num, b_num = b_num, a_num + b_num
+
+
+fib(2000)
+
+
+# 默认参数
+def ask_ok(prompt, retries=4, reminder='Please try again!'):
+    while True:
+        reply = input(prompt)
+        if reply in {'y', 'ye', 'yes'}:
+            return True
+        if reply in {'n', 'no', 'nop', 'nope'}:
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise ValueError('invalid user response')
+        print(reminder)
+
+
+ask_ok('Please enter')
