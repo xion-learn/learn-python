@@ -119,3 +119,14 @@ cheeseshop("Limburger", "It's very runny, sir.",
            shopkeeper="Michael Palin",
            client="John Cleese",
            sketch="Cheese Shop Sketch")
+
+
+# 四种参数定义方式
+def standard_arg(arg):
+    print(arg)
+def pos_only_arg(arg, /):
+    print(arg)
+def kwd_only_arg(*, arg):
+    print(arg)
+def combined_example(pos_only, /, standard, *, kwd_only):
+    print(pos_only, standard, kwd_only)
