@@ -130,3 +130,28 @@ def kwd_only_arg(*, arg):
     print(arg)
 def combined_example(pos_only, /, standard, *, kwd_only):
     print(pos_only, standard, kwd_only)
+
+
+# lambda匿名函数
+def make_incrementor(n):
+    return lambda x: x + n
+
+f = make_incrementor(42)
+f(0)
+f(1)
+
+
+# 文档字符串规范
+def my_function():
+    """Do nothing, but document it.
+
+    No, really, it doesn't do anything.
+    """
+    pass
+
+print(my_function.__doc__)
+
+
+# 添加函数标注
+def f(ham: str, eggs: str = 'eggs') -> str:
+    return ham + eggs
