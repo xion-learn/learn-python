@@ -12,3 +12,31 @@ fruits.sort()  # 就地排序列表
 fruits.reverse()  # 翻转列表
 fruits.copy()  # 返回列表的浅拷贝
 fruits.clear()  # 清空删除列表
+
+
+# 列表推导式
+newList = [(x, y) for x in [1, 2, 3] for y in [3, 1, 4] if x != y]
+print(newList)
+
+
+# 嵌套的列表推导式
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+]
+print([[row[i] for row in matrix] for i in range(4)])
+
+
+# del语句
+a = [-1, 1, 66.25, 333, 333, 1234.5]
+del a[0]
+print(a)
+
+del a[2:4]
+print(a)
+
+del a[:]
+print(a)
+
+del a
