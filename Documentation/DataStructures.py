@@ -76,3 +76,19 @@ print(tel)
 del tel['sape']
 tel['irv'] = 4127
 print('guido' in tel, 'jack' not in tel)
+
+
+# 循环字典时同时获取key和value
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
+
+# 循环列表时同时获取value和index
+for i, v in enumerate(['tic', 'tac', 'toe']):
+    print(i, v)
+
+# 同时循环多个列表，并将列表值一一对应
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q, a in zip(questions, answers):
+    print('What is your {0}?  It is {1}.'.format(q, a))
