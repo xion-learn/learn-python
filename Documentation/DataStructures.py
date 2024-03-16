@@ -92,3 +92,9 @@ questions = ['name', 'quest', 'favorite color']
 answers = ['lancelot', 'the holy grail', 'blue']
 for q, a in zip(questions, answers):
     print('What is your {0}?  It is {1}.'.format(q, a))
+
+
+# 比较运算
+print((1, 2, 3) < (1, 2, 4))
+print('ABC' < 'C' < 'Pascal' < 'Python')
+print((1, 2, ('aa', 'ab')) < (1, 2, ('abc', 'a'), 4))
