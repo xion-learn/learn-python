@@ -14,3 +14,11 @@ import module.fibo as fibo
 # 一个模块只会导入一次，可通过特殊函数重新导入模块
 import importlib
 importlib.reload(fibo)
+
+
+# 一些内置模块
+import sys
+print(sys.path)
+
+# 内置函数dir()
+print(dir(sys))
