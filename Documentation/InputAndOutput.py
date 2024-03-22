@@ -25,3 +25,12 @@ for x in range(1, 11):
 # 使用rjust函数自定义格式化
 for x in range(1, 11):
     print(repr(x).rjust(2), repr(x*x).rjust(3), repr(x*x*x).rjust(4))
+
+
+with open('file.txt', 'r+', encoding="utf-8") as f:
+    f.write('\n33333333333333')
+    for line in f:
+        print(line)
+
+# We can check that the file has been automatically closed.
+print(f.closed)
