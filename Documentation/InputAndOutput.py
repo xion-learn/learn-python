@@ -32,5 +32,11 @@ with open('file.txt', 'r+', encoding="utf-8") as f:
     for line in f:
         print(line)
 
-# We can check that the file has been automatically closed.
+# 查看文件是否被正确关闭
 print(f.closed)
+
+
+# JSON将字典转换为字符串
+import json
+x = [1, 'simple', 'list']
+print(json.dumps(x))
