@@ -53,3 +53,47 @@ try:
     this_fails()
 except ZeroDivisionError as err:
     print('Handling run-time error:', err)
+
+
+# raise语句手动触发异常
+def new_error():
+    try:
+        raise NameError('err1')
+    except NameError:
+        print('except1!')
+
+
+# 底层处理异常后，异常不会传递到上层
+try:
+    new_error()
+except NameError:
+    print('except2!')
+    raise
+
+
+# finally子句
+def divide(x, y):
+    try:
+        result = x / y
+    except ZeroDivisionError:
+        print("division by zero!")
+    else:
+        print("result is", result)
+    finally:
+        print("executing finally clause")
+
+
+divide(2, 1)
+divide(2, 0)
+
+
+# 同时抛出多个异常
+def f():
+    raise ExceptionGroup('group1', [OSError(1), SystemError(2), ExceptionGroup('group2', [OSError(3)])])
+
+try:
+    f()
+except* OSError as e:
+    print('OSError', e)
+except* SystemError as e:
+    print('SystemError', e)
