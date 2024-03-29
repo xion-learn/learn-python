@@ -46,3 +46,16 @@ my_class_1.i = 'i1'
 my_class_2.i = 'i2'
 print(my_class_1.i)
 print(my_class_2.i)
+
+
+class MySubClass(MyClass):
+    def __int__(self, some):
+        super.__init__(some)
+
+    def f(self):
+        return 'hello MySubClass'
+
+
+my_sub_class = MySubClass('')
+print(my_sub_class.f())
+
