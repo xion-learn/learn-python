@@ -48,6 +48,7 @@ print(my_class_1.i)
 print(my_class_2.i)
 
 
+# 类的继承
 class MySubClass(MyClass):
     def __int__(self, some):
         super.__init__(some)
@@ -59,3 +60,33 @@ class MySubClass(MyClass):
 my_sub_class = MySubClass('')
 print(my_sub_class.f())
 
+
+# 子类重写父类方法
+class Mapping:
+    def __init__(self, iterable):
+        self.items_list = []
+        # 使用双下划线开头的副本方法，确保子类重写update时仍然调用父类update
+        self.__update(iterable)
+
+    def update(self, iterable):
+        for item in iterable:
+            self.items_list.append(item)
+
+    __update = update
+
+
+class MappingSubclass(Mapping):
+    # 重写父类update方法
+    def update(self, keys, values):
+        for item in zip(keys, values):
+            self.items_list.append(item)
+
+
+# 用于声明一个数据结构
+from dataclasses import dataclass
+
+@dataclass
+class Employee:
+    name: str
+    dept: str
+    salary: int
